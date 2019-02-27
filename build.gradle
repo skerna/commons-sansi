@@ -1,0 +1,64 @@
+plugins {
+    id 'kotlin-multiplatform'
+}
+
+
+repositories {
+    mavenCentral()
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+    maven { url "https://kotlin.bintray.com/kotlin-dev" }
+}
+
+apply plugin: "maven-publish"
+//apply from: "$rootProject.rootDir/gradle/publish.gradle"
+
+
+configurations {
+    compileClasspath
+}
+
+kotlin {
+    targets {
+        //fromPreset(presets.android, 'android')
+        
+        fromPreset(presets.jvm, 'jvm')
+
+        fromPreset(presets.js, 'js')
+    }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-common'
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test-common'
+                implementation 'org.jetbrains.kotlin:kotlin-test-annotations-common'
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+            }
+        }
+        jvmTest {
+            dependencies {
+                implementation "org.jetbrains.kotlin:kotlin-test-junit"
+            }
+        }
+        jsMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
+            }
+        }
+        jsTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test-js'
+                implementation "org.jetbrains.kotlin:kotlin-test-js"
+
+            }
+        }
+    }
+}
+
