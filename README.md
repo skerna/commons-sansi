@@ -1,6 +1,6 @@
 # SKERNA SANSI
 
-Es un multiplatform implementacion de ANSI Colors, usando extension functions de Kotlin
+Es un multiplatform implementación de ANSI Colors, usando extension functions de Kotlin
 
 Objetos introducidos en tu sistema: 
 
@@ -12,7 +12,7 @@ Objetos introducidos en tu sistema:
 - JAVSCRIPT
 - KOTLIN
 
-### Utildiad
+### Utilidad
 
 ![BOLT](./docs/media/demo.png)
 
@@ -51,5 +51,6 @@ Java Lang
 ```
 
 ### Nivel de dependencias
-No tiene dependecias de ningun tipo.
+
+Cero dependencias.
 
