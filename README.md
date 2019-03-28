@@ -52,5 +52,13 @@ Java Lang
 
 ### Nivel de dependencias
 
-Cero dependencias.
+Si estas usando kotlin, la lib es practicamente cero dependencias,
+en el caso de JAVA, la unica dependencia es la STDLIB, y puede
+ser considerada como una ligera libreria utilitaria 
+
+
+JVM
+```gradle
+    api("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+```
 

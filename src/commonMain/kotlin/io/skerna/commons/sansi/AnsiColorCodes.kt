@@ -1,6 +1,6 @@
-package io.skerna.ansicolor
+package io.skerna.commons.sansi
 
-import io.skerna.ansicolor.Color.ESCAPE
+import io.skerna.commons.sansi.Color.ESCAPE
 
 
 /**
@@ -25,9 +25,24 @@ enum class AnsiColorCodes(baseCode: Int) {
     LIGHT_CYAN(96),
     WHITE(97);
 
+
     /** ANSI modifier string to apply the color to the text itself */
     val foreground: String = "$ESCAPE[${baseCode}m"
 
     /** ANSI modifier string to apply the color the text's background */
     val background: String = "$ESCAPE[${baseCode + BG_JUMP}m"
+
+    companion object {
+        /**
+         * Find color from ansi colors using string
+         */
+        fun fromString(name: String):AnsiColorCodes{
+            for (value in values()) {
+                if(name.equals(value.name)){
+                    return value;
+                }
+            }
+            return BLACK;
+        }
+    }
 }

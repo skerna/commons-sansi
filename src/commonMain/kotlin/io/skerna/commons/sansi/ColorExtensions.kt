@@ -1,4 +1,7 @@
-package io.skerna.ansicolor
+package io.skerna.commons.sansi
+
+import io.skerna.commons.sansi.AnsiColorCodes
+import io.skerna.commons.sansi.Color
 
 
 fun String.black() = Color.foreground(this, AnsiColorCodes.BLACK)
@@ -60,3 +63,5 @@ fun String.lightMagentaBackground() = Color.background(this, AnsiColorCodes.LIGH
 fun String.lightCyanBackground() = Color.background(this, AnsiColorCodes.LIGHT_CYAN)
 
 fun String.lightWhiteBackground() = Color.background(this, AnsiColorCodes.WHITE)
+
+fun String.renderAnsi() = Color.renderAnsi(this)

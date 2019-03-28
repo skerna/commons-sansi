@@ -1,4 +1,4 @@
-package io.skerna.ansicolor
+package io.skerna.commons.sansi
 
 
 /**
