@@ -1,5 +1,6 @@
 plugins {
     id 'kotlin-multiplatform'
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
 
@@ -7,11 +8,10 @@ repositories {
     mavenCentral()
     maven { url "https://kotlin.bintray.com/kotlinx" }
     maven { url "https://kotlin.bintray.com/kotlin-dev" }
-    maven { url "https://jitpack.io" }
+    maven { url  "https://dl.bintray.com/skerna/maven" }
 }
 
 apply plugin: "maven-publish"
-//apply from: "$rootProject.rootDir/gradle/publish.gradle"
 
 
 configurations {
@@ -62,4 +62,5 @@ kotlin {
         }
     }
 }
+apply from: "./gradle/publish.gradle"
 
