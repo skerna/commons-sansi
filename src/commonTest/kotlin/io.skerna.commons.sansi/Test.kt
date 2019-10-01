@@ -57,7 +57,6 @@ class Test {
     }
 
     fun renderInnerVars(line: String,regex:Regex): String {
-        var noColorized = ""
         var compiledString = line;
         val result = regex.findAll(line)
         for (matchResult in result.iterator()) {
@@ -72,7 +71,6 @@ class Test {
     }
 
     fun renderGlobals(line: String,regex: Regex): String {
-            var noColorized = ""
             var compiledString = line;
             val result = regex.findAll(line)
             for (matchResult in result.iterator()) {
